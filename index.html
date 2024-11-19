@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>寻宝游戏</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="start-page" class="active">
+    <h1>寻宝游戏</h1>
+    <label for="playerId">玩家ID：</label><input type="text" id="playerId" />
+    <label for="playerName">玩家名称：</label><input type="text" id="playerName" />
+    <button id="start-button">开始寻宝</button>
+  </div>
+  <div id="library-page" class="hidden">
+    <h2>古老图书馆</h2>
+    <img src="library.jpg" alt="古老图书馆" width="600" height="auto">
+  </div>
+  <div id="treasure-map-page" class="hidden">
+    <h2>藏宝图</h2>
+    <img src="treasure-map.jpg" alt="藏宝图" width="600" height="auto">
+  </div>
+  <div id="chest-page" class="hidden">
+    <h2>宝箱</h2>
+    <img src="treasure-chest.jpg" alt="宝箱" width="600" height="auto">
+  </div>
+  <div id="guard-page" class="hidden">
+    <h2>神庙守卫</h2>
+    <img src="temple-guard.jpg" alt="神庙守卫" width="600" height="auto">
+  </div>
+  <div id="end-page" class="hidden">
+    <h2>恭喜你！</h2>
+    <img src="end-screen.jpg" alt="宝藏" width="600" height="auto">
+  </div>
+  <div id="fail-page" class="hidden">
+    <h2>失败了...</h2>
+    <img src="fail.jpg" alt="失败">
+  </div>
+  <div id="messages"></div>
+  <audio id="background-music" loop>
+    <source src="background-music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button id="music-control">Toggle Music</button>
+
+  <!-- 新增展示信息窗口按钮 -->
+  <button id="show-info-button">查看玩家信息和游戏记录</button>
+
+  <!-- 新增展示信息窗口 -->
+  <div id="info-window" class="hidden">
+    <h2>玩家信息和游戏记录</h2>
+    <span id="player-id-display"></span><br>
+    <span id="player-name-display"></span><br>
+    <ul id="game-record-list"></ul>
+    <button id="close-info-button">关闭窗口</button>
+  </div>
+
+  <script src="treasure.js"></script>
+</body>
+
+</html>
